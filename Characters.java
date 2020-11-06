@@ -18,8 +18,8 @@ public class Characters {
     //constructor
     public Characters() {
         this.name = "";
-        this.pointOfLife = 50;
-        this.maxLife = 50;
+        this.pointOfLife = 200;
+        this.maxLife = 200;
         this.alive = false;
     }
 
@@ -67,23 +67,13 @@ public class Characters {
     public String getName(){
         return name;
     }
-    
-    
-    //methods
 
-
-    public boolean isDead () {
-        if(getPointOfLife()<= 0) {
-            setPointOfLife(0);
-            setAlive(this.alive = false);
-            System.out.println(Characters.);
+    public boolean isDead (Characters perso) {
+        if(perso.getPointOfLife() <= 0) {
+            perso.setPointOfLife(0);
+            perso.setAlive(false);
+            //System.out.println(Characters.);
         }
-        return this.pointOfLife;
+        return this.getAlive();
     }
-
-
-    
-
-
-
 }

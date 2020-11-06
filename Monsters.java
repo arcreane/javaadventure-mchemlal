@@ -4,10 +4,10 @@ package com.dungeon_and_monsters;
 
 public class Monsters extends Characters {
 
-    // properties
-    Weapons weapon1 = new Weapons("axe", 0);
-    Weapons weapon2 = new Weapons("thunder", 0);
-    String name;
+    Monsters [] arrayMonsters;
+    Weapons weapon1 = new Weapons("axe", 10);
+    Weapons weapon2 = new Weapons("thunder", 10);
+    //String name;
 
     //constructor
     public Monsters(String name, int pointOfLife, int maxLife, boolean alive){
@@ -32,14 +32,19 @@ public class Monsters extends Characters {
         return weapon2;
     }
 
-    public
 
-
-    //accessors
-
-
-
-
-
+    public boolean magician_attack(Hero hero){
+        int damage = this.weapon2.getDamage();
+        int lifeLeft = hero.pointOfLife - damage;
+        hero.setPointOfLife(lifeLeft);
+        return true;
     }
+
+    public boolean barbaric_attack(Hero hero){
+        int damage = this.weapon1.getDamage();
+        int lifeLeft = hero.pointOfLife - damage;
+        hero.setPointOfLife(lifeLeft);
+        return true;
+    }
+}
 

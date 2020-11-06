@@ -2,9 +2,6 @@ package com.dungeon_and_monsters;
 
 public class Weapons{
 
-
-
-    //properties
     public String nameWeapon;
     public int damage;
 
