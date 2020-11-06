@@ -2,49 +2,53 @@ package com.dungeon_and_monsters;
 
 public class Hero extends Characters{
 
+    Monsters magician = new Monsters("magician", 200, 200, true);
+    Monsters barbarian = new Monsters("barbarian", 200, 200, true);
+    public Weapons heroWeapon;
+
+
+
+
     //properties
-    // à voir - public Weapons heroFlaskWeapon = new Weapons("", 0);
-    public Weapons heroSwordWeapon = new Weapons("Sword", 10);
+
 
     //constructor
 
     public Hero(String name, int pointOfLife, int maxLife, boolean alive){
         super(name, pointOfLife, maxLife, alive);
         //this.setHeroFlaskWeapon(heroFlaskWeapon);
-        this.setHeroSwordWeapon(heroSwordWeapon);
+        this.setHeroWeapon(heroWeapon);
     }
 
 
 
 
-    private void setHeroSwordWeapon(Weapons heroSwordWeapon) {
-        this.heroSwordWeapon = heroSwordWeapon;
+    public void setHeroWeapon(Weapons heroWeapon) {
+        this.heroWeapon = heroWeapon;
     }
 
-    public Weapons getHeroSwordWeapon() {
-        return heroSwordWeapon;
+    public Weapons getHeroWeapon() {
+        return heroWeapon;
     }
 
-    //public void setHeroFlaskWeapon(Weapons heroFlaskWeapon) {
-        //this.heroFlaskWeapon = heroFlaskWeapon;
-    //}
-    //public Weapons getHeroFlaskWeapon(){
-        //return heroFlaskWeapon;
-    //}
+
 
     // method hero attack magician or barbaric
-    public void heroAttack_Magician_Method(Magician magician){
-        int damage = this.heroSwordWeapon.getDamage();
+    public boolean heroAttack_Magician_Method(Monsters magician){
+        int damage = this.heroWeapon.getDamage();
         int lifeLeftMagician = magician.pointOfLife - damage;
         //magician.pointOfLife = lifeLeftMagician - damage;
         magician.setPointOfLife(lifeLeftMagician);
+        return true;
     }
 
-    public void heroAttack_Barbaric_Method(Barbaric barbaric){
-        int damage = this.heroSwordWeapon.getDamage();
+    public void heroAttack_Barbaric_Method(Monsters barbaric){
+        int damage = this.heroWeapon.getDamage();
         int lifeLeftBarbaric = barbaric.pointOfLife - damage;
         barbaric.setPointOfLife(lifeLeftBarbaric);
     }
+
+    //public void attackMonsters
 
 
 

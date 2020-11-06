@@ -1,14 +1,16 @@
 package com.dungeon_and_monsters;
 
-public class Weapons extends Characters{
+public class Weapons{
+
+
 
     //properties
-    public String name;
+    public String nameWeapon;
     public int damage;
 
     //constructor
-    public Weapons(String name, int damage){
-        this.setName(name);
+    public Weapons(String nameWeapon, int damage){
+        this.setNameWeapon(nameWeapon);
         this.setDamage(damage);
     }
 
@@ -23,12 +25,12 @@ public class Weapons extends Characters{
 
     //___________________________________getter and setter for property name
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameWeapon(String nameWeapon) {
+        this.nameWeapon = nameWeapon;
     }
 
-    public String getName(){
-        return name;
+    public String getNameWeapon(){
+        return nameWeapon;
     }
 
 }

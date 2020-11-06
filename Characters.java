@@ -30,6 +30,7 @@ public class Characters {
         this.setAlive(alive);
     }
 
+
     //accessors
 
     //_______________________ setting and getting alive
@@ -71,11 +72,13 @@ public class Characters {
     //methods
 
 
-    public void isDead (Characters character){
-        if(character.pointOfLife <= 0){
-            int characterLife = this.pointOfLife;
-            setPointOfLife(characterLife);
+    public boolean isDead () {
+        if(getPointOfLife()<= 0) {
+            setPointOfLife(0);
+            setAlive(this.alive = false);
+            System.out.println(Characters.);
         }
+        return this.pointOfLife;
     }
 
 
